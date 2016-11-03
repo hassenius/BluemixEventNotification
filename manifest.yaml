@@ -1,0 +1,5 @@
+applications:
+- name: EventNotification
+  memory: 64M
+  path: .
+  command: python app.py

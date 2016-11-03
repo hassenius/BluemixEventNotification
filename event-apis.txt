@@ -1,0 +1,6 @@
+https://console.eu-gb.bluemix.net/status/api/notifications
+https://console.eu-gb.bluemix.net/status/api/v1/regions
+https://console.eu-gb.bluemix.net/status/api/v1/categories
+https://console.eu-gb.bluemix.net/status/api/v1/eventTypes
+https://console.eu-gb.bluemix.net/status/api/v1/statuses
+https://console.eu-gb.bluemix.net/events/

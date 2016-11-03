@@ -1,0 +1,51 @@
+<html>
+<head>
+<title>Notification selection generator</title>
+</head>
+<body>
+<form name="filters" action="/feed/notifications.rss" method="GET">
+  <table>
+    <tr>
+      <td> Regions </td>
+      <td> Select </td>
+    </tr>
+    {% for region in regions %}
+    <tr>
+      <td> {{ region.displayName }} </td>
+      <td> <input type="checkbox" name="regions" value="{{ region.id }}"> </td>
+    </tr>
+    {% endfor %}
+    <tr>
+      <td> Event Types </td>
+      <td> Select </td>
+    </tr>
+    {% for type in types %}
+    <tr>
+      <td>{{ type.displayName }}</td>
+      <td> <input type="checkbox" name="eventtypes" value="{{ type.id }}"> </td>
+    </tr>
+    {% endfor %}
+    <tr>
+      <td> Categories </td>
+      <td> Select </td>
+    </tr>
+    {% for category in categories %}
+    <tr>
+      <td> {{ category.displayName }} </td>
+      <td> <input type="checkbox" name="categories" value="{{ category.id }}"> </td>
+    </tr>
+      {% for subcategory in category.components %}
+      <tr>
+        <td>{{ category.displayName }} : {{ subcategory.displayName }}</td>
+        <td> <input type="checkbox" name="subcategories" value="{{ subcategory.id }}"> </td>
+      </tr>
+      {% endfor %}
+    {% endfor %}
+  </table>
+  <input type="submit" value="Generate URL">
+</form>
+</body
+</html>
+
+  
+  
