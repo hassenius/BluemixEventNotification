@@ -8,7 +8,14 @@ import re
 LOG_FORMAT = ('%(levelname) -10s %(asctime)s %(name) -30s %(funcName) '
               '-35s %(lineno) -5d: %(message)s')
 LOGGER = logging.getLogger(__name__)
-logging.basicConfig(level=logging.INFO, format=LOG_FORMAT)
+LOG_LEVELS = {
+  'DEBUG':    logging.DEBUG,
+  'INFO':     logging.INFO,
+  'WARNING':  logging.WARNING,
+  'ERROR':    logging.ERROR,
+  'CRITICAL': logging.CRITICAL
+}
+logging.basicConfig(level=LOG_LEVELS[os.getenv('LOG_LEVEL', 'INFO')], format=LOG_FORMAT)
 
 notification_url = 'https://console.eu-gb.bluemix.net/status/api/notifications'
 regions_url = 'https://console.eu-gb.bluemix.net/status/api/v1/regions'
